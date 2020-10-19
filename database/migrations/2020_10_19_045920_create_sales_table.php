@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailInvoicesTable extends Migration
+class CreateSalesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDetailInvoicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('detail_invoices', function (Blueprint $table) {
+        Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateDetailInvoicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_invoices');
+        Schema::dropIfExists('sales');
     }
 }
