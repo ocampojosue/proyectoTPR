@@ -14,7 +14,16 @@ class CreateProvidersTable extends Migration
     public function up()
     {
         Schema::create('providers', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_proveedor');
+            $table->String('name');
+            $table->String('surname');
+            $table->Integer('phone');
+            $table->String('city');
+            $table->String('direction');
+            $table->Integer('ci');
+            $table->String('company_name');
+            //$table->unsignedBigInteger('usuario_id');
+            //$table->foreign('usuario_id')->references('id_usuario')->on('User')->onDelete('cascade');
             $table->timestamps();
         });
     }
