@@ -14,17 +14,18 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id('id_product');
             $table->String('name');
             $table->String('description');
             $table->integer('quantity');
             $table->decimal('price');
-            //$table->unsignedBigInteger('categoria_id');
-            //$table->foreign('categoria_id')->references('id_categoria')->on('Category')->onDelete('cascade');
-            //$table->unsignedBigInteger('usuario_id');
-            //$table->foreign('usuario_id')->references('id_usuario')->on('User')->onDelete('cascade');
-            //$table->unsignedBigInteger('proveedor_id');           
-            //$table->foreign('categoria_id')->references('id_proveedor')->on('Provider')->onDelete('cascade');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('category_id')->references('id_category')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('provider_id');           
+            $table->foreign('category_id')->references('id_provider')->on('providers')->onDelete('cascade');
             $table->timestamps();
         });
     }

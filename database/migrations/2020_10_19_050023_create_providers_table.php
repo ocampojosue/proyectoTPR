@@ -14,7 +14,8 @@ class CreateProvidersTable extends Migration
     public function up()
     {
         Schema::create('providers', function (Blueprint $table) {
-            $table->id('id_proveedor');
+            $table->engine = 'InnoDB';
+            $table->id('id_provider');
             $table->String('name');
             $table->String('surname');
             $table->Integer('phone');
@@ -22,8 +23,8 @@ class CreateProvidersTable extends Migration
             $table->String('direction');
             $table->Integer('ci');
             $table->String('company_name');
-            //$table->unsignedBigInteger('usuario_id');
-            //$table->foreign('usuario_id')->references('id_usuario')->on('User')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -14,15 +14,16 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->bigIncrements('id_sale');
+            $table->engine = 'InnoDB';
+            $table->id('id_sale');
             $table->date('date');
             $table->decimal('price');
-            //$table->unsignedBigInteger('cliente_id');
-            //$table->foreign('cliente_id')->references('id_cliente')->on('Client')->onDelete('cascade');
-            //$table->unsignedBigInteger('producto_id');
-            //$table->foreign('producto_id')->references('id_producto')->on('Product')->onDelete('cascade');
-            //$table->unsignedBigInteger('usuario_id');
-            //$table->foreign('usuario_id')->references('id_usuario')->on('User')->onDelete('cascade');
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id_client')->on('clients')->onDelete('cascade');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id_product')->on('products')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
