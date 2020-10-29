@@ -22,7 +22,7 @@ class CreateSalesTable extends Migration
             $table->foreign('client_id')->references('id_client')->on('clients')->onDelete('cascade');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id_product')->on('products')->onDelete('cascade');
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
@@ -38,3 +38,4 @@ class CreateSalesTable extends Migration
         Schema::dropIfExists('sales');
     }
 }
+

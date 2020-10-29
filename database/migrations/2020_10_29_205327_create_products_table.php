@@ -20,12 +20,12 @@ class CreateProductsTable extends Migration
             $table->String('description');
             $table->integer('quantity');
             $table->decimal('price');
-            $table->unsignedBigInteger('categoria_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id_category')->on('categories')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('provider_id');           
-            $table->foreign('category_id')->references('id_provider')->on('providers')->onDelete('cascade');
+            $table->foreign('provider_id')->references('id_provider')->on('providers')->onDelete('cascade');
             $table->timestamps();
         });
     }
