@@ -34,7 +34,7 @@ class UserController extends Controller
         $user->email= $email;
         //run query in the database
         $user->update();
-        return redirect()->route('config')
-                        ->whit(['message'=>'Usuario Actualizado Correctamente']);
+        return redirect()->route('config');
+                        //->whit(['message'=>'Usuario Actualizado Correctamente'])
     }
 }
