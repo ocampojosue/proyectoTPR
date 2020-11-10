@@ -19,8 +19,8 @@ class UserController extends Controller
         $validate = $this->validate($request,[
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:255', 'unique:users'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'max:255', 'unique:users,username,'.$id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$id],
         ]);
         //getting values
         $name = $request->input('name');
@@ -34,7 +34,7 @@ class UserController extends Controller
         $user->email= $email;
         //run query in the database
         $user->update();
-        return redirect()->route('config');
-                        //->whit(['message'=>'Usuario Actualizado Correctamente'])
+        return redirect()->route('config')
+                        ->with(['message'=>'Usuario Actualizado Correctamente']);
     }
 }

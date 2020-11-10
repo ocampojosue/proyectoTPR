@@ -4,15 +4,15 @@
     <div class="row justify-content-center">
         @if(session('message'))
             <div class="alert alert success">
-                <h3>User Updated Correctly</h3>
+                <h3></h3>
             </div>
         @endif
         <div class="col-md-8">       
             <div class="card">
-                <div class="card-header">{{ __('My Configuration Page') }}</div>
+                <div class="card-header">My Configuration Page</div>
 
                 <div class="card-body">
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('user.update')}}">
                         @csrf
                         
                         <div class="form-group row">
