@@ -58,6 +58,21 @@
                                     <a class="dropdown-item" href="">
                                         My Profile
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('index') }}"}}>
+                                        Add Category 
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('config') }}"}}>
+                                        Add Client
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('config') }}"}}>
+                                        Add Product
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('config') }}"}}>
+                                        Add Provider
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('config') }}"}}>
+                                        Add Sale 
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('config') }}"}}>
                                         Settings 
                                     </a>
