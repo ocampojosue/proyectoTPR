@@ -15,11 +15,13 @@ class CategoryController extends Controller
         return view('category.category');
     }
     public function create(){
+        return view('category.create');
     }
     public function store(Request $request){
         $category = new Category();
         $category->category_name = $request->category_name;
         $category->save();
+        
     }
     public function destroy($id){
     }

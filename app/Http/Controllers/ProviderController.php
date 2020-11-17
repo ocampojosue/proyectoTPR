@@ -23,6 +23,7 @@ class ProviderController extends Controller
         $provider->company_name = $request->company_name;
         $provider->user_id = $request->user_id;
         $provider->save();
+        
     }
     public function destroy($id){
     }

@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->String('description');
             $table->integer('quantity');
             $table->decimal('price');
+            $table->String('photo');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id_category')->on('categories')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
