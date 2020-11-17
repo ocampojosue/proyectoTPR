@@ -1,15 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Provider;
 use Illuminate\Http\Request;
 
 class ProviderController extends Controller
 {
-    public function index(){
-        return view('provider.index');
+    public function indexprov(){
+        return view('provider.provider');
     }
     public function create(){
+        return view ();
     }
     public function store(Request $request){
         $provider = new Provider();
@@ -20,6 +21,7 @@ class ProviderController extends Controller
         $provider->direction = $request->direction;
         $provider->ci = $request->ci;
         $provider->company_name = $request->company_name;
+        $provider->user_id = $request->user_id;
         $provider->save();
     }
     public function destroy($id){

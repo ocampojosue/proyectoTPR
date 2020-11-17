@@ -23,9 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/config', 'UserController@config')->name('config');
 
-Route::get('/category', 'CategoryController@index')->name('index');
+Route::get('/category', 'CategoryController@indexcat')->name('indexcat');
 Route::post('/category', 'CategoryController@store')->name('category.store');
 
-Route::get('/provider', 'ProviderController@index')->name('index');
-
+Route::get('/provider', 'ProviderController@indexprov')->name('indexprov');
+Route::post('/provider', 'ProviderController@store')->name('provider.store');
 Route::post('/config','UserController@update')->name('user.update');

@@ -58,7 +58,7 @@
                                     <a class="dropdown-item" href="">
                                         My Profile
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('index') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('indexcat') }}"}}>
                                         Add Category 
                                     </a>
                                     <a class="dropdown-item" href="{{ route('config') }}"}}>
@@ -67,7 +67,7 @@
                                     <a class="dropdown-item" href="{{ route('config') }}"}}>
                                         Add Product
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('config') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('indexprov') }}"}}>
                                         Add Provider
                                     </a>
                                     <a class="dropdown-item" href="{{ route('config') }}"}}>
