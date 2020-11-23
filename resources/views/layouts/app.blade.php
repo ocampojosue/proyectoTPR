@@ -69,16 +69,16 @@
                                     <a class="dropdown-item" href="{{ route('category.index') }}">
                                         Category 
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexcli') }}">
+                                    <a class="dropdown-item" href="{{ route('client.index') }}">
                                         Client
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexprod') }}">
+                                    <a class="dropdown-item" href="{{ route('product.index') }}">
                                         Product
                                     </a>
                                     <a class="dropdown-item" href="{{ route('provider.index') }}">
                                         Provider
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexsale') }}">
+                                    <a class="dropdown-item" href="{{ route('sale.index') }}">
                                         Sale 
                                     </a>
                                     <a class="dropdown-item" href="{{ route('config') }}">

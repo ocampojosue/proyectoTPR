@@ -29,17 +29,13 @@ Route::patch('category', 'CategoryController@update');
 Route::resource('provider', 'ProviderController');
 Route::patch('provider', 'ProviderController@update');
 
-/* Route::get('/provider', 'ProviderController@indexprov')->name('indexprov');
-Route::post('/provider', 'ProviderController@store')->name('provider.store'); */
+Route::resource('product', 'ProductController');
+Route::patch('product', 'ProductController@update');
 
-Route::get('/product', 'ProductController@indexprod')->name('indexprod');
-Route::get('/product/create', 'ProductController@create')->name('product.create');
-Route::post('/product', 'ProductController@store')->name('product.store');
+Route::resource('client', 'ClientController');
+Route::patch('client', 'ClientController@update');
 
-Route::get('/client', 'ClientController@indexcli')->name('indexcli');
-Route::post('/client', 'ClientController@store')->name('product.store');
-
-Route::get('/sale', 'SaleController@indexsale')->name('indexsale');
-Route::post('/sale', 'SaleController@store')->name('product.store');
+Route::resource('sale', 'SaleController');
+Route::patch('sale', 'SaleController@update');
 
 Route::post('/config','UserController@update')->name('user.update');
