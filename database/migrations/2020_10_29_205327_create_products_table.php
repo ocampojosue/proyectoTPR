@@ -23,10 +23,13 @@ class CreateProductsTable extends Migration
             $table->String('photo');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id_category')->on('categories')->onDelete('cascade');
+            $table->String('category_name');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->String('user_name');
             $table->unsignedBigInteger('provider_id');           
             $table->foreign('provider_id')->references('id_provider')->on('providers')->onDelete('cascade');
+            $table->String('provider_name');
             $table->timestamps();
         });
     }

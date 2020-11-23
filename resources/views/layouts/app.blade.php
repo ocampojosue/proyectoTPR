@@ -17,7 +17,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -28,6 +28,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -51,6 +52,11 @@
                                 </li>
                             @endif
                         @else
+                        {{-- HEADER EN LUGAR DE LA LISTA DONDE VAN LOS MODULOS
+                            <li class="nav-item dropdown">
+                            <a class="navbar-brand" href="{{ route('provider.index') }}" >Provider
+                            </a>
+                        </li> --}}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -60,22 +66,22 @@
                                     <a class="dropdown-item" href="">
                                         My Profile
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexcat') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('category.index') }}">
                                         Category 
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexcli') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('indexcli') }}">
                                         Client
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexprod') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('indexprod') }}">
                                         Product
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexprov') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('provider.index') }}">
                                         Provider
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('indexsale') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('indexsale') }}">
                                         Sale 
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('config') }}"}}>
+                                    <a class="dropdown-item" href="{{ route('config') }}">
                                         Settings 
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -101,10 +107,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("select").select2();
-        })
-    </script>
+    
 </body>
 </html>

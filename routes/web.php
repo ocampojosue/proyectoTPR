@@ -23,12 +23,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/config', 'UserController@config')->name('config');
 
-Route::get('/category', 'CategoryController@indexcat')->name('indexcat');
-Route::get('/category/create', 'CategoryController@create')->name('category.create');
-Route::post('/category', 'CategoryController@store')->name('category.store');
+Route::resource('category', 'CategoryController');
+Route::patch('category', 'CategoryController@update');
 
-Route::get('/provider', 'ProviderController@indexprov')->name('indexprov');
-Route::post('/provider', 'ProviderController@store')->name('provider.store');
+Route::resource('provider', 'ProviderController');
+Route::patch('provider', 'ProviderController@update');
+
+/* Route::get('/provider', 'ProviderController@indexprov')->name('indexprov');
+Route::post('/provider', 'ProviderController@store')->name('provider.store'); */
 
 Route::get('/product', 'ProductController@indexprod')->name('indexprod');
 Route::get('/product/create', 'ProductController@create')->name('product.create');

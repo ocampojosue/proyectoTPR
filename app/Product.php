@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $primaryKey='id_product';
     protected $table = "products";
     //relacion uno a muchos
     public function categories(){

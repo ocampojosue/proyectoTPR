@@ -78,7 +78,7 @@
 
                             <div class="col-md-6">
                                 <select name="category_id" id="category_id" class="form-control">
-                                    <option value="">Select One Option</option>
+                                    <option value="">--Select a Category--</option>
                                     @foreach ($categories as $value)
                                         <option value="{{$value->id_category}}">{{$value->category_name}}</option>
                                     @endforeach
@@ -109,7 +109,7 @@
 
                             <div class="col-md-6">
                                 <select name="provider_id" id="provider_id" class="form-control">
-                                    <option value="">Select One Option</option>
+                                    <option value="">--Select a Provider--</option>
                                     @foreach ($providers as $value)
                                         <option value="{{$value->id_provider}}">{{$value->name}}</option>
                                     @endforeach
@@ -134,4 +134,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="/js/product/create.js"></script>
 @endsection

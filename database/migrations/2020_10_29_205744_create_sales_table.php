@@ -20,10 +20,13 @@ class CreateSalesTable extends Migration
             $table->decimal('price');
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id_client')->on('clients')->onDelete('cascade');
+            $table->String('client_name');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id_product')->on('products')->onDelete('cascade');
+            $table->String('product_name');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->String('user_name');
             $table->timestamps();
         });
     }
