@@ -62,7 +62,9 @@
                                 <select name="category_id" id="category_id" class="form-control">
                                     <option value="">--Select a Category--</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{$category->id_category}}">{{$category->category_name}}</option>
+                                        <option value="{{$category->id_category}}" {{old('category_id') == $category->category_id ? "selected" : ""}}>
+                                            {{$category->category_name}}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -85,7 +87,9 @@
                                 <select name="provider_id" id="provider_id" class="form-control">
                                     <option value="">--Select a Provider--</option>
                                     @foreach ($providers as $provider)
-                                        <option value="{{$provider->id_provider}}">{{$provider->name}} {{$provider->surname}}</option>
+                                        <option value="{{$provider->id_provider}}" {{ old('provider_id') == $provider->provider_id ? "selected" : "" }}>
+                                            {{$provider->name}} {{$provider->surname}}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>

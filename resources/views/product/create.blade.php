@@ -66,8 +66,8 @@
                             <div class="col-md-6">
                                 <select name="category_id" id="category_id" class="form-control">
                                     <option value="">--Select a Category--</option>
-                                    @foreach ($categories as $value)
-                                        <option value="{{$value->id_category}}">{{$value->category_name}}</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{$category->id_category}}">{{$category->category_name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -89,8 +89,9 @@
                             <div class="col-md-6">
                                 <select name="provider_id" id="provider_id" class="form-control">
                                     <option value="">--Select a Provider--</option>
-                                    @foreach ($providers as $value)
-                                        <option value="{{$value->id_provider}}">{{$value->name}} {{$value->surname}}</option>
+                                    @foreach ($providers as $provider)
+                                        <option value="{{$provider->id_provider}}" {{$provider->id_provider==2 ? 'selected' :
+                                        ''}}>{{$provider->name}} {{$provider->surname}}</option>
                                     @endforeach
                                 </select>
                             </div>
