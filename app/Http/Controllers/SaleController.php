@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Sale;
+use App\Category;
+use App\Provider;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -12,8 +14,10 @@ class SaleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $categories=Category::paginate(5);
-        return view('category.index',compact('categories')); 
+        $sales=Sale::paginate(5);
+        $categories = Category::all();
+        $providers = Provider::all();
+        return view('sale.index',compact('sales','categories', 'providers')); 
     }
     /**
      * Show the form for creating a new resource.
@@ -21,7 +25,9 @@ class SaleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('category.create');
+        $categories = Category::all();
+        $providers = Provider::all();
+        return view('sale.create' ,compact('categories', 'providers'));
     }
     /**
      * Store a newly created resource in storage.
