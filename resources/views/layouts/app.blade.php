@@ -127,7 +127,7 @@
                             <a class="nav-link" href="{{route("sale.index")}}">Sale&nbsp;<i class="fas fa-cart-arrow-down"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route("config")}}">Config&nbsp;<i class="fas fa-cog"></i></a>
+                            <a class="nav-link" href="{{route("config")}}">Config&nbsp;<i class="fas fa-share-square"></a>
                         </li>
                     @endguest
                 </ul>
